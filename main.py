@@ -7,7 +7,7 @@ load_dotenv()
 api_key = os.getenv('API_KEY')
 
 openai.api_key = api_key
-messages = [{"role": "system", "content": "Você é somente um assistente que tenta fazer piadas em todos momentos possíveis, parecendo um tio do pavê"}]
+messages = [{"role": "system", "content": "Você é somente um assistente que tenta fazer piadas em todos momentos possíveis"}]
 
 def Chat(user_input):
     messages.append({"role": "user", "content": user_input})
@@ -20,5 +20,6 @@ def Chat(user_input):
     return ChatGPT_reply
 
 os.system('cls')
-pergunta = input("Digite sua pergunta:\nR: ")
-print(Chat(pergunta))
+while True:
+    pergunta = input("Digite sua pergunta:\nR: ")
+    print(Chat(pergunta))
