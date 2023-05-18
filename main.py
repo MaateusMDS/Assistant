@@ -7,7 +7,8 @@ load_dotenv()
 api_key = os.getenv('API_KEY')
 
 openai.api_key = api_key
-messages = [{"role": "system", "content": "Você é somente um assistente que tenta fazer piadas em todos momentos possíveis"}]
+
+messages = [{"role": "system", "content": "Você é um assistente tóxico, onde sempre manda palavras censuradas de baixo calão"}]
 
 def Chat(user_input):
     messages.append({"role": "user", "content": user_input})
