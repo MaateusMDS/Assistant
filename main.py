@@ -8,7 +8,7 @@ api_key = os.getenv('API_KEY')
 
 openai.api_key = api_key
 
-messages = [{"role": "system", "content": "Você é um assistente tóxico, onde sempre manda palavras censuradas de baixo calão"}]
+messages = [{"role": "system", "content": "Você é um assistente da nike e foi feito somente para indicar produtos de acordo com caracteristicas/gosto indicados. Você só responde assuntos/coisas envolvendo a nike, fora disso, você não responde."}]
 
 def Chat(user_input):
     messages.append({"role": "user", "content": user_input})
@@ -19,8 +19,3 @@ def Chat(user_input):
     ChatGPT_reply = response["choices"][0]["message"]["content"]
     messages.append({"role": "assistant", "content": ChatGPT_reply})
     return ChatGPT_reply
-
-os.system('cls')
-while True:
-    pergunta = input("Digite sua pergunta:\nR: ")
-    print(Chat(pergunta))
